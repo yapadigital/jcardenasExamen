@@ -13,27 +13,36 @@ public partial class Registro : ContentPage
 
     private void pkPais_SelectedIndexChanged(object sender, EventArgs e)
     {
+        var picker = (Picker)sender;
+        var seleccion = picker.SelectedItem.ToString();
+        tmpPais.Text = seleccion;
 
-    }
+
+        }
 
     private void pkCiudad_SelectedIndexChanged(object sender, EventArgs e)
     {
+        var pickerc = (Picker)sender;
+        var seleccionc = pickerc.SelectedItem.ToString();
+        tmpCiudad.Text = seleccionc;
 
     }
 
     private void btnResumen_Clicked(object sender, EventArgs e)
     {
-        string nombre = txtNombre.Text;
+        string usuariop=lblUsuario.Text;
+                string nombre = txtNombre.Text;
         string apellido = txtApellido.Text;
         string edad = txtEdad.Text;
-        // string fecha = dpFecha.DateSelected();
-        // string ciudad = pkCiudad.SelectedItem;
-        // string pais = pkCiudad.SelectedItem;
+        string fecha = tmpFecha.Text;
+        string ciudad = tmpCiudad.Text;
+        string pais = tmpPais.Text;
         string montoinicial = txtMontoI.Text;
         string cuotamensual=txtPagoMensual.Text;
-        //string pagototal=
+        string pagototal= tmpPT.Text;
 
-        Navigation.PushAsync(new Views.Resumen(nombre,apellido, edad,montoinicial, cuotamensual));
+
+        Navigation.PushAsync(new Views.Resumen(usuariop,nombre, apellido, edad,fecha,ciudad,pais,montoinicial, cuotamensual,pagototal));
 
     }
 
@@ -45,6 +54,7 @@ public partial class Registro : ContentPage
         var pago_total = (cuota * 4) + monto_inicial;
 
         txtPagoMensual.Text = cuota.ToString();
+        tmpPT.Text=pago_total.ToString();
 
 
 
@@ -60,5 +70,12 @@ public partial class Registro : ContentPage
             return;
         }
 
+    }
+
+    private void dpFecha_DateSelected(object sender, DateChangedEventArgs e)
+    {
+        var FechaSel = e.NewDate;
+        tmpFecha.Text = FechaSel.ToString();
+        
     }
 }

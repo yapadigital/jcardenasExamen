@@ -47,6 +47,7 @@
                      Format="MM/dd/yyyy"
                         Grid.Row="0"
                         Grid.Column="1"
+                        DateSelected="dpFecha_DateSelected"
                         />
 
             <Label Text="País"
@@ -161,6 +162,20 @@
          Text="VER RESUMEN"
          Clicked="btnResumen_Clicked"
          />
+
+        <Label x:Name="tmpPais"
+               IsVisible="False"
+               />
+        <Label x:Name="tmpCiudad"
+               IsVisible="False"
+       />
+        <Label x:Name="tmpFecha"
+               IsVisible="False"
+/>
+
+        <Label x:Name="tmpPT"
+               IsVisible="False"
+/>
 
     </VerticalStackLayout>
 </ContentPage>
