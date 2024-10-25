@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jcardenasExamen.Views.Login"
+             Title="Login">
+    <VerticalStackLayout
+    Padding="25"
+    Spacing="25">
+
+
+        <Image Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png"
+WidthRequest="200"
+/>
+        <Label 
+        Text="LOGIN-Inicio de Sesión"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" 
+        TextColor="Red"
+        FontSize="20"
+        />
+      
+ 
+       
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Usuario"
+             Grid.Row="0"
+                   Grid.Column="0"
+            />
+
+            <Entry x:Name="txtUsuario"
+  Placeholder="Ingresa usuario"
+                Grid.Row="0"
+       Grid.Column="1"    
+                   
+          
+/>
+
+            <Label Text="Contraseña"
+ Grid.Row="1"
+       Grid.Column="0"
+/>
+
+
+            <Entry x:Name="txtContrasena"
+Placeholder="Ingrese Contraseña"
+                   IsPassword="True"
+ 
+                    Grid.Row="1"
+       Grid.Column="1"
+/>
+
+        </Grid>
+
+        <Button x:Name="btnIniciar"
+  Text="Iniciar sesión"
+Clicked="btnIniciar_Clicked"
+    
+  />
+
+    </VerticalStackLayout>
+</ContentPage>
